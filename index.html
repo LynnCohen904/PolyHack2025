@@ -1,113 +1,161 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PolyHack 2025 – Technion Polymer Hackathon</title>
-    <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; background: #f9f9f9; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
-        header { background: #005bbb; color: white; padding: 40px 0; text-align: center; }
-        h1 { font-size: 2.5em; margin: 0; }
-        h2 { color: #005bbb; }
-        .tagline { font-size: 1.5em; margin: 10px 0 30px; }
-        .cta-button { display: inline-block; background: #ff6b00; color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 20px 0; }
-        .cta-button:hover { background: #e55f00; }
-        .section { padding: 40px 0; border-bottom: 1px solid #ddd; }
-        .challenge { background: #fff; padding: 20px; margin: 10px 0; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .logos { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 20px 0; }
-        .logo { height: 60px; }
-        footer { background: #333; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
-        @media (max-width: 768px) { .container { padding: 10px; } iframe{height:1400px;} }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PolyHack 2025 — Technion Polymer Hackathon</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue:#003d7c;        /* Technion dark blue */
+      --blue-light:#1250a5;  /* lighter blue */
+      --yellow:#ffd200;      /* Technion yellow */
+      --gray-bg:#f5f7fa;
+      --gray-text:#556;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Rubik',Arial,sans-serif;background:var(--gray-bg);color:var(--gray-text);line-height:1.6}
+    a{color:var(--blue-light);text-decoration:none}
+    header{background:linear-gradient(135deg,var(--blue) 0%,var(--blue-light) 100%);color:#fff;text-align:center;padding:60px 20px;position:relative;overflow:hidden}
+    header:after{content:'';position:absolute;bottom:-40px;left:0;width:100%;height:120px;background:var(--gray-bg);transform:skewY(-3deg);transform-origin:0}
+    header img{height:90px;margin-bottom:20px}
+    h1{font-size:2.8rem;margin-bottom:5px;font-weight:500}
+    .tagline{font-size:1.4rem;margin-bottom:15px}
+    nav{margin-top:25px}
+    nav a{color:#fff;font-weight:500;margin:0 15px;display:inline-block;transition:.3s}
+    nav a:hover{opacity:.8}
+    .container{max-width:1150px;margin:auto;padding:0 20px}
+    section{padding:60px 0}
+    h2{color:var(--blue);font-size:2rem;margin-bottom:25px;text-align:center;font-weight:500}
+    .intro{text-align:center;font-size:1.1rem;max-width:800px;margin:auto}
+    /* Challenges grid */
+    .grid{display:grid;gap:25px}
+    @media(min-width:700px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:#fff;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.08);padding:20px;position:relative;border-top:4px solid var(--yellow)}
+    .card h3{color:var(--blue);font-size:1.25rem;margin-bottom:10px}
+    .card p{font-size:.95rem}
+    /* CTA */
+    .cta{display:inline-block;background:var(--yellow);color:var(--blue);padding:14px 34px;border-radius:40px;font-weight:600;margin-top:30px;transition:.3s}
+    .cta:hover{filter:brightness(95%)}
+    /* Partners */
+    .logo-row{display:flex;flex-wrap:wrap;justify-content:center;gap:30px}
+    .logo-row img{height:60px;filter:grayscale(0);transition:.2s}
+    .logo-row img:hover{transform:scale(1.05)}
+    /* Footer */
+    footer{background:var(--blue);color:#fff;text-align:center;font-size:.9rem;padding:25px 15px}
+    /* Form responsive */
+    iframe{border:none;width:100%;height:1650px}
+    @media(max-width:768px){iframe{height:1450px}}
+  </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>PolyHack 2025</h1>
-            <div class="tagline">Engineering Ideas Into Matter</div>
-            <p>Technion – Haifa, Israel | 21–22 November 2025</p>
-            <a href="#register" class="cta-button">Register Now</a>
-        </div>
-    </header>
 
-    <div class="container">
-        <section class="section">
-            <h2>About PolyHack</h2>
-            <p>PolyHack is a 24-hour, non-code hackathon that unites students from Materials Engineering, Chemical Engineering, Biotechnology &amp; Food Engineering, and Architecture to solve real polymer-industry challenges. Teams turn scientific insight into slide-deck concepts—no lab work, no software builds—strengthening the Technion ↔ Industry pipeline.</p>
-        </section>
+<header>
+  <img src="PolyHack_logo.png" alt="PolyHack logo">
+  <h1>PolyHack 2025</h1>
+  <p class="tagline">Engineering Ideas Into Matter</p>
+  <p>Technion — Haifa, Israel · 21–22 November 2025</p>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#challenges">Challenges</a>
+    <a href="#partners">Partners</a>
+    <a href="#register" class="cta">Register</a>
+  </nav>
+</header>
 
-        <section class="section">
-            <h2>Who Can Participate?</h2>
-            <p>Open to all Technion students in Materials Engineering, Chemical Engineering, Biotechnology &amp; Food Engineering, and Architecture. Multidisciplinary teams of 4–5 students will be formed to maximize diversity and innovation.</p>
-        </section>
+<main class="container">
 
-        <section class="section">
-            <h2>Event Schedule</h2>
-            <p><strong>Friday, 21 November 2025 (10:00) – Saturday, 22 November 2025 (10:00)</strong></p>
-            <p>Full schedule and detailed run-of-show available upon registration.</p>
-        </section>
+  <section id="about">
+    <h2>About PolyHack</h2>
+    <p class="intro">
+      PolyHack is a 24‑hour, non‑code hackathon that unites students from Materials Engineering, Chemical Engineering, Biotechnology &amp; Food Engineering, and Architecture to solve real polymer‑industry challenges. Teams turn scientific insight into slide‑deck concepts—no lab work, no software builds—strengthening the Technion ↔ Industry pipeline.
+    </p>
+  </section>
 
-        <section class="section">
-            <h2>Industry Challenges</h2>
-            <div class="challenge">
-                <h3>Smart Thermochromic Packaging</h3>
-                <p><strong>Owner:</strong> Kafrit | <strong>Goal:</strong> &Delta;E &lt; 3 after 5 cycles (80↔5 °C)</p>
-            </div>
-            <div class="challenge">
-                <h3>Long-Acting Drug Release</h3>
-                <p><strong>Owners:</strong> Polyram &amp; BioGen | <strong>Goal:</strong> t<sup>½</sup> ≈ 30 days @ 37 °C</p>
-            </div>
-            <div class="challenge">
-                <h3>Biodegradable Thermoplastics</h3>
-                <p><strong>Owner:</strong> Carmel Olefins | <strong>Goal:</strong> ASTM D6400 ≤ 180 days</p>
-            </div>
-            <div class="challenge">
-                <h3>Lightweight TIM Composite</h3>
-                <p><strong>Owners:</strong> Tower &amp; NVIDIA | <strong>Goal:</strong> κ &gt; 8 W/m·K; ρ &lt; 1.3 g/cc</p>
-            </div>
-            <div class="challenge">
-                <h3>Lab Waste Upcycling</h3>
-                <p><strong>Owner:</strong> Stratasys | <strong>Goal:</strong> ≥ 70% material recovery</p>
-            </div>
-        </section>
+  <section>
+    <h2>Who Can Participate?</h2>
+    <p class="intro">
+      Open to all Technion students in the four faculties above. Multidisciplinary teams of 4–5 students will be formed to maximise diversity and innovation.
+    </p>
+  </section>
 
-        <section class="section">
-            <h2>Judging &amp; Prizes</h2>
-            <p>Teams will be judged on scientific innovation, technical feasibility, business/environmental impact, multidisciplinary teamwork, KPI compliance, and storytelling quality. Exciting prizes and industry recognition for the winning teams!</p>
-        </section>
+  <section>
+    <h2>Event Timeline</h2>
+    <p class="intro">
+      Friday 21 November 2025 (10:00) — Saturday 22 November 2025 (10:00). A detailed run‑of‑show will be sent upon registration.
+    </p>
+  </section>
 
-        <section class="section">
-            <h2>Partners &amp; Sponsors</h2>
-            <div class="logos">
-                <img src="technion_logo.png" class="logo" alt="Technion">
-                <img src="kafrit_logo.png" class="logo" alt="Kafrit">
-                <img src="polyram_logo.png" class="logo" alt="Polyram">
-                <img src="biogen_logo.png" class="logo" alt="BioGen">
-                <img src="carmel_olefins_logo.png" class="logo" alt="Carmel Olefins">
-                <img src="tower_logo.png" class="logo" alt="Tower">
-                <img src="nvidia_logo.png" class="logo" alt="NVIDIA">
-                <img src="stratasys_logo.png" class="logo" alt="Stratasys">
-            </div>
-        </section>
-
-        <section class="section" id="register">
-            <h2>Register Now</h2>
-            <p>Ready to join? Fill out the form below to secure your spot. Limited to 50 participants—register early!</p>
-            <!-- Embedded Google Form -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdzQdz5ZyMxCH4DO3sIB1rcBMriH-xtotRJWZP6MQbkptjB8A/viewform?embedded=true" width="100%" height="1700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </section>
-
-        <section class="section">
-            <h2>Contact Us</h2>
-            <p>Questions? Contact Project Lead Lynn Cohen: <a href="mailto:lynn.cohen@campus.technion.ac.il">lynn.cohen@campus.technion.ac.il</a></p>
-        </section>
+  <section id="challenges">
+    <h2>Industry Challenges</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Smart Thermochromic Packaging</h3>
+        <p><strong>Owner:</strong> Kafrit<br><strong>Goal:</strong> ΔE &lt; 3 after 5 cycles (80↔5 °C)</p>
+      </div>
+      <div class="card">
+        <h3>Long‑Acting Drug Release</h3>
+        <p><strong>Owners:</strong> Polyram &amp; BioGen<br><strong>Goal:</strong> t<sup>½</sup> ≈ 30 days @ 37 °C</p>
+      </div>
+      <div class="card">
+        <h3>Biodegradable Thermoplastics</h3>
+        <p><strong>Owner:</strong> Carmel Olefins<br><strong>Goal:</strong> ASTM D6400 ≤ 180 days</p>
+      </div>
+      <div class="card">
+        <h3>Lightweight TIM Composite</h3>
+        <p><strong>Owners:</strong> Tower &amp; NVIDIA<br><strong>Goal:</strong> κ &gt; 8 W/m·K; ρ &lt; 1.3 g/cc</p>
+      </div>
+      <div class="card">
+        <h3>Lab Waste Upcycling</h3>
+        <p><strong>Owner:</strong> Stratasys<br><strong>Goal:</strong> ≥ 70 % material recovery</p>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 PolyHack – Technion Polymer Hackathon. All rights reserved.</p>
-        </div>
-    </footer>
+  <section>
+    <h2>Judging &amp; Prizes</h2>
+    <p class="intro">
+      Teams are evaluated on scientific innovation, technical feasibility, business/environmental impact, multidisciplinary teamwork, KPI compliance, and storytelling. Attractive prizes and industry recognition await the winning teams.
+    </p>
+  </section>
+
+  <section id="partners">
+    <h2>Partners &amp; Sponsors</h2>
+    <div class="logo-row">
+      <img src="technion_logo.png" alt="Technion">
+      <img src="kafrit_logo.png" alt="Kafrit">
+      <img src="polyram_logo.png" alt="Polyram">
+      <img src="biogen_logo.png" alt="BioGen">
+      <img src="carmel_olefins_logo.png" alt="Carmel Olefins">
+      <img src="tower_logo.png" alt="Tower">
+      <img src="nvidia_logo.png" alt="NVIDIA">
+      <img src="stratasys_logo.png" alt="Stratasys">
+    </div>
+  </section>
+
+  <section id="register">
+    <h2>Register Now — 50 Seats Only</h2>
+    <p class="intro">Complete the form below to secure your spot.</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdzQdz5ZyMxCH4DO3sIB1rcBMriH-xtotRJWZP6MQbkptjB8A/viewform?embedded=true">Loading…</iframe>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p class="intro">
+      Questions? Email project lead <a href="mailto:lynn.cohen@campus.technion.ac.il">Lynn Cohen</a>.
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  © 2025 PolyHack — Technion Polymer Hackathon
+</footer>
+
 </body>
 </html>
